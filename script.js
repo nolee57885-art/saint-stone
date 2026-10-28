@@ -1,47 +1,27 @@
 
 const cards = [
-  {
-    name: "The High Priestess",
-    roman: "II",
-    symbol: "☾",
-    keyword: "Listen inward",
-    text: "The High Priestess invites stillness, intuition, and attention to what has not yet been spoken. What might you notice if you gave yourself a quieter moment?"
-  },
-  {
-    name: "The Star",
-    roman: "XVII",
-    symbol: "✧",
-    keyword: "Hope returns",
-    text: "The Star speaks in the language of renewal and possibility. Consider what helps you feel restored, and what small act could bring you closer to that feeling."
-  },
-  {
-    name: "The World",
-    roman: "XXI",
-    symbol: "◎",
-    keyword: "A cycle completes",
-    text: "The World traditionally represents completion, integration, and the threshold of a new cycle. What have you learned, and how might you honour the distance you have travelled?"
-  },
-  {
-    name: "The Moon",
-    roman: "XVIII",
-    symbol: "☽",
-    keyword: "Move gently",
-    text: "The Moon asks you to make room for uncertainty and imagination. Not every answer is visible yet; distinguish what you know from what you fear or hope."
-  },
-  {
-    name: "Strength",
-    roman: "VIII",
-    symbol: "♌",
-    keyword: "Gentle courage",
-    text: "Strength is often depicted as calm courage rather than force. Where could patience, compassion, or a steadier response serve you better than pressure?"
-  },
-  {
-    name: "The Hermit",
-    roman: "IX",
-    symbol: "✦",
-    keyword: "Seek your own light",
-    text: "The Hermit suggests retreat, reflection, and the wisdom found in solitude. Which voices are truly helpful, and what do you hear when outside noise softens?"
-  }
+  { name:"The Fool", roman:"0", symbol:"✧", keyword:"Begin with wonder", text:"The Fool represents beginnings, openness, and the courage to step into the unknown. What first step can you take while remaining mindful of the path ahead?" },
+  { name:"The Magician", roman:"I", symbol:"⚕", keyword:"Make it real", text:"The Magician brings attention to skill, intention, and the resources already within reach. What can you put into practice today?" },
+  { name:"The High Priestess", roman:"II", symbol:"☾", keyword:"Listen inward", text:"The High Priestess invites stillness, intuition, and attention to what has not yet been spoken. What might you notice if you gave yourself a quieter moment?" },
+  { name:"The Empress", roman:"III", symbol:"❀", keyword:"Nurture growth", text:"The Empress is associated with creativity, care, and abundance. What deserves patience, nourishment, and room to grow?" },
+  { name:"The Emperor", roman:"IV", symbol:"♜", keyword:"Create structure", text:"The Emperor speaks to boundaries, responsibility, and stable foundations. Where would a clear plan or healthy boundary help?" },
+  { name:"The Hierophant", roman:"V", symbol:"✥", keyword:"Learn from tradition", text:"The Hierophant points toward shared wisdom, teaching, and tradition. Which beliefs genuinely guide you, and which deserve fresh examination?" },
+  { name:"The Lovers", roman:"VI", symbol:"♡", keyword:"Choose with care", text:"The Lovers concerns connection, values, and meaningful choices. What decision would better reflect what matters most to you?" },
+  { name:"The Chariot", roman:"VII", symbol:"⚔", keyword:"Direct your will", text:"The Chariot represents direction, determination, and holding competing forces in balance. What deserves your focused effort?" },
+  { name:"Strength", roman:"VIII", symbol:"♙ 🦁", keyword:"Gentle courage", text:"Strength traditionally shows a woman calmly tending a lion, with an infinity symbol above her head. It represents courage guided by compassion and self-command rather than force. Where could patience be more powerful than pressure?" },
+  { name:"The Hermit", roman:"IX", symbol:"☼", keyword:"Seek your own light", text:"The Hermit suggests reflection and the wisdom found in solitude. What do you hear when outside noise softens?" },
+  { name:"Wheel of Fortune", roman:"X", symbol:"☸", keyword:"Meet the turning", text:"The Wheel of Fortune represents cycles, change, and circumstances beyond complete control. What can you adapt to, and what remains within your influence?" },
+  { name:"Justice", roman:"XI", symbol:"⚖", keyword:"Seek honest balance", text:"Justice invites fairness, accountability, and clear-eyed reflection. What would an honest and balanced response look like?" },
+  { name:"The Hanged One", roman:"XII", symbol:"∞", keyword:"See differently", text:"The Hanged One suggests a pause and a change of perspective. What might become clearer if you stopped trying to force an immediate answer?" },
+  { name:"Death", roman:"XIII", symbol:"☠", keyword:"Make room for change", text:"Death symbolises endings, transition, and renewal—not a literal prediction of death. What are you ready to release so something new can begin?" },
+  { name:"Temperance", roman:"XIV", symbol:"⚗", keyword:"Find the middle way", text:"Temperance represents patience, integration, and measured adjustment. Where could a gentler pace or a thoughtful compromise help?" },
+  { name:"The Devil", roman:"XV", symbol:"⛓", keyword:"Notice the chains", text:"The Devil invites awareness of habits, attachments, and patterns that limit freedom. What choice could help you reclaim agency without shame?" },
+  { name:"The Tower", roman:"XVI", symbol:"ϟ", keyword:"Let truth break through", text:"The Tower represents disruption and the collapse of unstable structures. What truth needs attention, and what can be rebuilt on firmer ground?" },
+  { name:"The Star", roman:"XVII", symbol:"✧", keyword:"Hope returns", text:"The Star speaks of renewal and possibility. What helps you feel restored, and what small act could bring you closer to that feeling?" },
+  { name:"The Moon", roman:"XVIII", symbol:"☽", keyword:"Move gently", text:"The Moon asks you to make room for uncertainty and imagination. Distinguish what you know from what you fear or hope." },
+  { name:"The Sun", roman:"XIX", symbol:"☀", keyword:"Welcome vitality", text:"The Sun is associated with clarity, warmth, and joyful presence. What is working well that deserves to be acknowledged?" },
+  { name:"Judgement", roman:"XX", symbol:"♢", keyword:"Answer the call", text:"Judgement concerns reflection, awakening, and responding to a deeper sense of purpose. What lesson are you ready to act upon?" },
+  { name:"The World", roman:"XXI", symbol:"◎", keyword:"Complete the circle", text:"The World represents completion, integration, and a threshold to a new cycle. What have you learned, and how might you honour the distance travelled?" }
 ];
 
 function drawThreeCards() {
@@ -188,3 +168,59 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
 
 // Automatically update the footer year
 document.getElementById("year").textContent = new Date().getFullYear();
+
+
+// Private tarot journal: entries are saved only in this browser.
+const journalForm = document.getElementById("journal-form");
+const journalEntries = document.getElementById("journal-entries");
+const journalStatus = document.getElementById("journal-status");
+const JOURNAL_KEY = "saintStoneJournalEntries";
+
+function loadJournal() {
+  let entries = [];
+  try { entries = JSON.parse(localStorage.getItem(JOURNAL_KEY) || "[]"); } catch (_) {}
+  journalEntries.replaceChildren();
+  entries.forEach((entry, index) => {
+    const article = document.createElement("article");
+    article.className = "journal-entry";
+    const title = document.createElement("h3");
+    title.textContent = entry.title;
+    const date = document.createElement("p");
+    date.className = "journal-date";
+    date.textContent = entry.date;
+    const body = document.createElement("p");
+    body.textContent = entry.body;
+    const remove = document.createElement("button");
+    remove.className = "stone-more";
+    remove.type = "button";
+    remove.textContent = "Delete entry";
+    remove.addEventListener("click", () => {
+      entries.splice(index, 1);
+      localStorage.setItem(JOURNAL_KEY, JSON.stringify(entries));
+      loadJournal();
+      journalStatus.textContent = "Entry deleted.";
+    });
+    article.append(title, date, body, remove);
+    journalEntries.append(article);
+  });
+}
+
+journalForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const title = document.getElementById("journal-title").value.trim();
+  const body = document.getElementById("journal-entry").value.trim();
+  if (!title || !body) return;
+  let entries = [];
+  try { entries = JSON.parse(localStorage.getItem(JOURNAL_KEY) || "[]"); } catch (_) {}
+  entries.unshift({ title, body, date: new Date().toLocaleString() });
+  try {
+    localStorage.setItem(JOURNAL_KEY, JSON.stringify(entries));
+    journalForm.reset();
+    journalStatus.textContent = "Your entry has been saved in this browser.";
+    loadJournal();
+  } catch (_) {
+    journalStatus.textContent = "Could not save this entry. Check your browser storage settings.";
+  }
+});
+
+loadJournal();
