@@ -1,5 +1,5 @@
 
-# SS TAROT — Saint Stone
+# Saint Stone — Saint Stone
 
 A mystical tarot and crystal grimoire website prototype built with HTML, CSS, and JavaScript.
 
@@ -28,7 +28,7 @@ Download or clone the repository to your computer and open `index.html` in a web
 ## Before publishing
 
 - Replace the temporary SS emblem with the original Saint Stone artwork.
-- Replace `hello@example.com` in `index.html` with your real consultation email address.
+- Replace `saintstone97@icloud.com` in `index.html` with your real consultation email address.
 - Review tarot interpretations and crystal lore for your preferred tradition.
 - Add a privacy policy and terms before collecting visitor information.
 - Add a booking service and payment provider if you want to accept appointments and payments.
@@ -46,3 +46,10 @@ Real appointment booking, payment processing, user accounts, and video consultat
 6. Wait for the deployment to finish, then open the published URL shown in the Pages settings.
 
 The website is a spiritual reflection experience and does not provide medical, legal, or financial advice.
+
+
+## Brand and next steps
+
+The public-facing brand is **Saint Stone**. The original emblem is intentionally a placeholder until the owner uploads the final artwork. The Major Arcana prototype includes 22 cards with reflection-oriented meanings. Card art is currently symbolic typography/glyphs and should be replaced by a consistent original illustrated deck before presenting it as a finished visual tarot deck.
+
+The private journal stores entries in the visitor's browser using localStorage. It is not a cloud account or encrypted diary; visitors should not use it for sensitive information or on shared devices.
