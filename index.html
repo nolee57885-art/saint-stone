@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#071426">
-  <title>SS TAROT — The Saint Stone Oracle</title>
+  <title>Saint Stone — The Oracle</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -15,14 +15,15 @@
   <div class="grain" aria-hidden="true"></div>
 
   <header class="site-header">
-    <a class="wordmark" href="#home" aria-label="SS Tarot home">
+    <a class="wordmark" href="#home" aria-label="Saint Stone home">
       <span class="brand-mark">SS</span>
-      <span class="brand-name">SS <i>TAROT</i></span>
+      <span class="brand-name">SAINT <i>STONE</i></span>
     </a>
     <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
     <nav class="nav-links" aria-label="Main navigation">
       <a href="#oracle">The Oracle</a>
       <a href="#grimoire">Crystal Grimoire</a>
+      <a href="#journal">Tarot Journal</a>
       <a href="#consult">Private Consult</a>
     </nav>
     <a class="header-cta" href="#oracle">Enter the sanctuary <span>↗</span></a>
@@ -60,13 +61,13 @@
       <div class="spread-labels"><span>01 · THE PAST</span><span>02 · THE PRESENT</span><span>03 · THE POSSIBLE</span></div>
       <div class="tarot-spread" id="tarot-spread">
         <button class="tarot-card" data-card="0" aria-label="Reveal card one">
-          <span class="card-inner"><span class="card-back"><span class="card-number">I</span><span class="card-moon">☾</span><span class="card-sigil">✧</span><span class="card-caption">SS · ORACLE</span></span><span class="card-front"><span class="roman"></span><span class="card-art"></span><strong></strong><small></small></span></span>
+          <span class="card-inner"><span class="card-back"><span class="card-number">I</span><span class="card-moon">☾</span><span class="card-sigil">✧</span><span class="card-caption">SAINT STONE</span></span><span class="card-front"><span class="roman"></span><span class="card-art"></span><strong></strong><small></small></span></span>
         </button>
         <button class="tarot-card" data-card="1" aria-label="Reveal card two">
-          <span class="card-inner"><span class="card-back"><span class="card-number">II</span><span class="card-moon">☽</span><span class="card-sigil">✧</span><span class="card-caption">SS · ORACLE</span></span><span class="card-front"><span class="roman"></span><span class="card-art"></span><strong></strong><small></small></span></span>
+          <span class="card-inner"><span class="card-back"><span class="card-number">II</span><span class="card-moon">☽</span><span class="card-sigil">✧</span><span class="card-caption">SAINT STONE</span></span><span class="card-front"><span class="roman"></span><span class="card-art"></span><strong></strong><small></small></span></span>
         </button>
         <button class="tarot-card" data-card="2" aria-label="Reveal card three">
-          <span class="card-inner"><span class="card-back"><span class="card-number">III</span><span class="card-moon">☾</span><span class="card-sigil">✧</span><span class="card-caption">SS · ORACLE</span></span><span class="card-front"><span class="roman"></span><span class="card-art"></span><strong></strong><small></small></span></span>
+          <span class="card-inner"><span class="card-back"><span class="card-number">III</span><span class="card-moon">☾</span><span class="card-sigil">✧</span><span class="card-caption">SAINT STONE</span></span><span class="card-front"><span class="roman"></span><span class="card-art"></span><strong></strong><small></small></span></span>
         </button>
       </div>
       <p class="spread-instruction" id="spread-instruction">Select each card to reveal your three-card spread.</p>
@@ -113,21 +114,39 @@
       <p class="gentle-note">Elemental associations vary across traditions; these entries describe symbolic lore, not scientific or medical effects.</p>
     </section>
 
+    <section class="section journal-section" id="journal">
+      <div class="section-heading">
+        <p class="eyebrow">III · THE PRIVATE PAGES</p>
+        <h2>Your Tarot <em>Journal</em></h2>
+        <p>Record a question, a reading, or a thought you want to return to. Entries stay in this browser on this device.</p>
+      </div>
+      <form id="journal-form" class="journal-form">
+        <label for="journal-title">Entry title</label>
+        <input id="journal-title" name="title" maxlength="100" placeholder="A question for the cards" required>
+        <label for="journal-entry">Your reflections</label>
+        <textarea id="journal-entry" name="entry" rows="5" maxlength="4000" placeholder="What came up for you today?" required></textarea>
+        <button class="button button-crimson" type="submit">Save journal entry ✧</button>
+        <p class="journal-status" id="journal-status" aria-live="polite"></p>
+      </form>
+      <div id="journal-entries" class="journal-entries"></div>
+      <p class="gentle-note">Entries are stored locally in your browser, not sent to Saint Stone. Clearing browser data may erase them. Avoid saving sensitive personal information on a shared device.</p>
+    </section>
+
     <section class="consult-section" id="consult">
       <div class="consult-ornament">✧ &nbsp; ☾ &nbsp; ✧</div>
       <p class="eyebrow">III · A PRIVATE AUDIENCE</p>
       <h2>A moment, <em>just for you.</em></h2>
       <p>For a quieter, more personal exploration, enquire about a private tarot consultation with Saint Stone.</p>
-      <a class="button button-crimson" href="mailto:hello@example.com?subject=Private%20SS%20Tarot%20Consultation">Enquire about a session ↗</a>
+      <a class="button button-crimson" href="mailto:saintstone97@icloud.com?subject=Private%20Saint%20Stone%20Consultation">Enquire about a session ↗</a>
       <p class="consult-small">Booking and secure video sessions will be added in a later build.</p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-brand">SS <i>TAROT</i></div>
+    <div class="footer-brand">SAINT <i>STONE</i></div>
     <p>May you meet the unknown with curiosity.</p>
     <div class="footer-moons">☾ · ◔ · ○ · ◕ · ☽</div>
-    <small>© <span id="year"></span> SS TAROT · SAINT STONE</small>
+    <small>© <span id="year"></span> SAINT STONE</small>
   </footer>
 
   <dialog id="stone-dialog" class="stone-dialog">
