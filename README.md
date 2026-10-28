@@ -1,5 +1,5 @@
 
-# Saint Stone — Saint Stone
+# Saint Stone
 
 A mystical tarot and crystal grimoire website prototype built with HTML, CSS, and JavaScript.
 
