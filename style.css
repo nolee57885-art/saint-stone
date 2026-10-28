@@ -604,3 +604,18 @@ h1 em, h2 em { color: var(--blue); font-weight: 400; }
     transition-duration: .01ms!important;
   }
 }
+
+
+/* Saint Stone private journal */
+.journal-section { background: linear-gradient(180deg,#081629,#0b182b); border-top: 1px solid var(--line); }
+.journal-form { max-width: 680px; margin: 0 auto 32px; display: grid; gap: 11px; }
+.journal-form label { color: var(--blue); font: 10px var(--serif); letter-spacing: .12em; margin-top: 8px; }
+.journal-form input, .journal-form textarea { width: 100%; color: #e6edf8; background: rgba(3,12,25,.72); border: 1px solid var(--line); padding: 13px 14px; font: 18px var(--body); }
+.journal-form input:focus, .journal-form textarea:focus { outline: 1px solid var(--blue); }
+.journal-form .button { justify-self: start; }
+.journal-status { color: var(--blue); font-size: 16px; }
+.journal-entries { max-width: 680px; margin: 0 auto; display: grid; gap: 14px; }
+.journal-entry { border: 1px solid var(--line); padding: 20px; background: rgba(4,14,27,.7); }
+.journal-entry h3 { color: var(--ice); margin: 0 0 5px; }
+.journal-entry p { color: #b4c4d7; white-space: pre-wrap; line-height: 1.55; }
+.journal-date { color: #829ab5!important; font-size: 14px; }
