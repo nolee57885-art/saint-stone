@@ -23,6 +23,7 @@
     <nav class="nav-links" aria-label="Main navigation">
       <a href="#oracle">The Oracle</a>
       <a href="#grimoire">Crystal Grimoire</a>
+      <a href="#tarot-deck">Tarot Deck</a>
       <a href="#journal">Tarot Journal</a>
       <a href="#consult">Private Consult</a>
     </nav>
@@ -114,6 +115,44 @@
       <p class="gentle-note">Elemental associations vary across traditions; these entries describe symbolic lore, not scientific or medical effects.</p>
     </section>
 
+
+    <section class="section tarot-library" id="tarot-deck">
+      <div class="section-heading">
+        <p class="eyebrow">THE SAINT STONE DECK · 78 CARDS</p>
+        <h2>The Tarot <em>Library</em></h2>
+        <p>Explore the Major Arcana and four suits. Select a card to reveal its symbolism and reflection. These readings are prompts for reflection, not fixed predictions.</p>
+      </div>
+      <div class="deck-controls">
+        <label class="deck-search-label" for="deck-search">Find a card</label>
+        <input id="deck-search" type="search" placeholder="Search cards, suits, or meanings…" autocomplete="off">
+        <div class="deck-filters" role="group" aria-label="Filter tarot cards">
+          <button class="deck-filter active" data-filter="all" type="button">All 78</button>
+          <button class="deck-filter" data-filter="major" type="button">Major Arcana</button>
+          <button class="deck-filter" data-filter="Wands" type="button">Wands</button>
+          <button class="deck-filter" data-filter="Cups" type="button">Cups</button>
+          <button class="deck-filter" data-filter="Swords" type="button">Swords</button>
+          <button class="deck-filter" data-filter="Pentacles" type="button">Pentacles</button>
+        </div>
+        <p id="deck-count" class="deck-count" aria-live="polite">78 cards</p>
+      </div>
+      <div id="tarot-grid" class="tarot-grid" aria-label="Tarot card collection"></div>
+      <dialog id="tarot-card-dialog" class="tarot-card-dialog">
+        <button class="tarot-dialog-close" type="button" aria-label="Close tarot card">×</button>
+        <div id="tarot-detail-art" class="tarot-detail-art"></div>
+        <div class="tarot-detail-copy">
+          <p class="eyebrow" id="tarot-detail-family"></p>
+          <h2 id="tarot-detail-title"></h2>
+          <p class="tarot-detail-keyword" id="tarot-detail-keyword"></p>
+          <div class="meaning-switch" role="group" aria-label="Reading orientation">
+            <button type="button" class="meaning-toggle active" data-orientation="upright">Upright</button>
+            <button type="button" class="meaning-toggle" data-orientation="reversed">Reversed</button>
+          </div>
+          <p id="tarot-detail-meaning" class="tarot-detail-meaning"></p>
+          <p id="tarot-detail-reflection" class="tarot-detail-reflection"></p>
+        </div>
+      </dialog>
+    </section>
+
     <section class="section journal-section" id="journal">
       <div class="section-heading">
         <p class="eyebrow">III · THE PRIVATE PAGES</p>
@@ -157,5 +196,6 @@
     <p class="dialog-note">Lore is cultural and symbolic; crystals are not substitutes for medical care.</p>
   </dialog>
   <script src="script.js"></script>
+  <script src="deck.js"></script>
 </body>
 </html>
