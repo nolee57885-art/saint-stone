@@ -113,17 +113,16 @@ document.querySelectorAll(".filter-chip").forEach((button) => {
 
 // Crystal Grimoire entries
 const stoneLore = {
-  "amethyst":
-    "Colour: violet to purple. Mineral: quartz. Symbolic associations: contemplation, calm, and spiritual reflection. Traditional lore varies by culture and period.",
-
-  "rose quartz":
-    "Colour: pale to deep pink. Mineral: quartz. Symbolic associations: tenderness, affection, and compassion in many modern crystal traditions.",
-
-  "labradorite":
-    "Colour: grey to dark, often flashing blue or green. Mineral: feldspar. Symbolic associations: transformation, possibility, and thresholds in contemporary crystal lore.",
-
-  "carnelian":
-    "Colour: orange to reddish brown. Mineral: chalcedony. Symbolic associations: vitality, courage, and creative momentum in historical and modern traditions."
+  "amethyst": "Colour: violet to purple. Mineral: quartz. Symbolic associations: contemplation, calm, and spiritual reflection. Traditional lore varies by culture and period.",
+  "rose-quartz": "Colour: pale to deep pink. Mineral: quartz. Symbolic associations: tenderness, affection, and compassion in many modern crystal traditions.",
+  "labradorite": "Colour: grey to dark, often flashing blue or green. Mineral: feldspar. Symbolic associations: transformation, possibility, and thresholds in contemporary crystal lore.",
+  "carnelian": "Colour: orange to reddish brown. Mineral: chalcedony. Symbolic associations: vitality, courage, and creative momentum in historical and modern traditions.",
+  "clear-quartz": "Colour: clear to milky. Mineral: quartz. Symbolic associations: clarity and amplification in many contemporary crystal practices; these are cultural beliefs, not proven effects.",
+  "obsidian": "Colour: black volcanic glass. Material: rapidly cooled lava. Symbolic associations: protection and boundaries in some modern crystal traditions.",
+  "sodalite": "Colour: royal to deep blue, often veined with white. Mineral: sodalite. Symbolic associations: communication and considered thought in modern crystal lore.",
+  "citrine": "Colour: pale yellow to amber. Mineral: quartz. Symbolic associations: optimism and prosperity in modern crystal traditions; market material may be heat-treated amethyst.",
+  "moonstone": "Colour: creamy white to peach, sometimes with a blue adularescent sheen. Mineral: feldspar. Symbolic associations: cycles and intuition in many traditions.",
+  "tigers-eye": "Colour: golden brown with silky bands. Mineral: quartz. Symbolic associations: confidence and discernment in modern crystal lore."
 };
 
 const dialog = document.getElementById("stone-dialog");
