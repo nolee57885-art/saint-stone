@@ -47,3 +47,13 @@ renderTarotDeck();
 
 /* Original engraved line-art tarot illustrations */
 .tarot-card-art{padding:0!important;background:#0b1728!important;display:block!important;line-height:0}.tarot-svg{width:100%;height:100%;display:block;aspect-ratio:360/520}.tarot-detail-art{padding:0!important;display:block!important;min-height:0!important;border:0!important;background:transparent!important;line-height:0}.tarot-svg-detail{width:100%;height:auto;max-height:66vh;display:block}.tarot-card-art:before,.tarot-detail-art:before{display:none}
+
+/* Illustrated mineral specimens in the Crystal Grimoire */
+.crystal-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.crystal-card{overflow:hidden}
+.crystal-art{height:auto;aspect-ratio:360/300;display:block;position:relative;overflow:hidden;background:#091321;border-bottom:1px solid rgba(181,139,85,.45)}
+.crystal-art img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .5s ease,filter .5s ease;filter:saturate(.88)}
+.crystal-card:hover .crystal-art img{transform:scale(1.025);filter:saturate(1.05)}
+.crystal-info{padding:22px}
+.crystal-info h3{margin:.3rem 0 .6rem}
+@media(max-width:640px){.crystal-grid{grid-template-columns:1fr;gap:16px}.crystal-art{aspect-ratio:360/260}}
