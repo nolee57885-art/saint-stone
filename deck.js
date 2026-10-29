@@ -9,15 +9,45 @@ const tarotDialog=document.getElementById("tarot-card-dialog");
 let activeDeckFilter="all", selectedTarotCard=null, tarotOrientation="upright";
 function renderTarotDeck(){
  const q=deckSearch.value.trim().toLowerCase();
- const visible=SAINT_STONE_CARDS.filter(c=>(activeDeckFilter==="all"||c.filter===activeDeckFilter)&&(c.name+" "+c.family+" "+c.keyword+" "+c.upright+" "+c.reversed).toLowerCase().includes(q));
+ const matches=SAINT_STONE_CARDS.filter(c=>{
+  const category=c.family==="Major Arcana"?"major":"minor";
+  const suit=c.family.split(" · ")[0];
+  const filterMatches=activeDeckFilter==="all"||
+   (activeDeckFilter==="major"&&category==="major")||
+   (activeDeckFilter==="minor"&&category==="minor")||
+   c.filter===activeDeckFilter;
+  return filterMatches&&(c.name+" "+c.family+" "+c.keyword+" "+c.upright+" "+c.reversed).toLowerCase().includes(q);
+ });
  tarotGrid.replaceChildren();
- visible.forEach(card=>{
-  const button=document.createElement("button");button.type="button";button.className="tarot-card";button.setAttribute("aria-label","Reveal "+card.name);button.style.setProperty("--card-glow",card.color);
+ const appendHeading=(title,subtitle="")=>{
+  const heading=document.createElement("div");heading.className="tarot-group-heading";
+  const h=document.createElement("h3");h.textContent=title;heading.append(h);
+  if(subtitle){const p=document.createElement("p");p.textContent=subtitle;heading.append(p);}
+  tarotGrid.append(heading);
+ };
+ const appendCard=card=>{
+  const button=document.createElement("button");button.type="button";button.className="tarot-card";button.setAttribute("aria-label","Explore "+card.name);button.style.setProperty("--card-glow",card.color);
   const art=document.createElement("span");art.className="tarot-card-art";art.append(makeTarotArt(card));
   const suit=document.createElement("span");suit.className="tarot-card-suit";suit.textContent=card.family;
   button.append(art,suit);button.addEventListener("click",()=>openTarotCard(card));tarotGrid.append(button);
- });
- deckCount.textContent="Showing "+visible.length+" of 78 cards";
+ };
+ const majors=matches.filter(c=>c.family==="Major Arcana");
+ const minors=matches.filter(c=>c.family!=="Major Arcana");
+ if(activeDeckFilter==="all"||activeDeckFilter==="major"){
+  if(majors.length){appendHeading("Major Arcana","22 cards · The larger archetypes, turning points, and chapters of the journey");majors.forEach(appendCard);}
+ }
+ if(activeDeckFilter==="all"||activeDeckFilter==="minor"){
+  if(minors.length){
+   appendHeading("Minor Arcana","56 cards · Everyday experiences through four suits");
+   ["Wands","Cups","Swords","Pentacles"].forEach(suit=>{
+    const group=minors.filter(c=>c.family.startsWith(suit+" ·")||c.filter===suit);
+    if(group.length){appendHeading(suit,({Wands:"Fire · creativity, courage, and momentum",Cups:"Water · feelings, relationships, and imagination",Swords:"Air · thought, truth, and decisions",Pentacles:"Earth · work, resources, and the tangible world"})[suit]);group.forEach(appendCard);}
+   });
+  }
+ } else if(!["all","major"].includes(activeDeckFilter)){
+  minors.forEach(appendCard);
+ }
+ deckCount.textContent="Showing "+matches.length+" of 78 cards";
 }
 function openTarotCard(card){
  selectedTarotCard=card;tarotOrientation="upright";
