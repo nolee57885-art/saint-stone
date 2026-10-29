@@ -27,7 +27,7 @@ Download or clone the repository to your computer and open `index.html` in a web
 
 ## Before publishing
 
-- Replace the temporary SS emblem with the original Saint Stone artwork.
+- The Saint Stone emblem is stored at `assets/saint-stone-logo.svg`; check it at desktop and mobile sizes.
 - Replace `saintstone97@icloud.com` in `index.html` with your real consultation email address.
 - Review tarot interpretations and crystal lore for your preferred tradition.
 - Add a privacy policy and terms before collecting visitor information.
@@ -50,6 +50,6 @@ The website is a spiritual reflection experience and does not provide medical, l
 
 ## Brand and next steps
 
-The public-facing brand is **Saint Stone**. The original emblem is intentionally a placeholder until the owner uploads the final artwork. The Major Arcana prototype includes 22 cards with reflection-oriented meanings. Card art is currently symbolic typography/glyphs and should be replaced by a consistent original illustrated deck before presenting it as a finished visual tarot deck.
+The public-facing brand is **Saint Stone**. The emblem artwork is an initial vector adaptation of the supplied Saint Stone reference; replace it with the exact source artwork when a suitable optimized source file is available. The Major Arcana prototype includes 22 cards with reflection-oriented meanings. Card art is currently symbolic typography/glyphs and should be replaced by a consistent original illustrated deck before presenting it as a finished visual tarot deck.
 
 The private journal stores entries in the visitor's browser using localStorage. It is not a cloud account or encrypted diary; visitors should not use it for sensitive information or on shared devices.
