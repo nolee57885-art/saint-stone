@@ -162,18 +162,47 @@ button { font: inherit; }
 .moon-track {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: var(--blue);
-  font-size: 20px;
-  margin-bottom: 25px;
+  justify-content: center;
+  gap: 11px;
+  margin: 0 0 25px;
   z-index: 1;
 }
-
 .moon-track i {
   display: block;
-  width: 28px;
+  width: clamp(12px,2vw,26px);
   height: 1px;
-  background: linear-gradient(90deg,transparent,var(--silver),transparent);
+  background: linear-gradient(90deg,transparent,#e7a5bc 45%,#9bc8f4,transparent);
+}
+.moon-phase {
+  position: relative;
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #ef9db8;
+  background: #ef9db8;
+  box-shadow: 0 0 12px rgba(239,157,184,.18);
+}
+.moon-phase.waning-crescent:after,
+.moon-phase.waxing-crescent:after,
+.moon-phase.first-quarter:after,
+.moon-phase.last-quarter:after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  background: #9bc8f4;
+}
+.moon-phase.waning-crescent:after { transform: translateX(-7px); }
+.moon-phase.waxing-crescent:after { transform: translateX(7px); }
+.moon-phase.first-quarter:after { transform: translateX(8px); }
+.moon-phase.last-quarter:after { transform: translateX(-8px); }
+.moon-phase.full-moon {
+  border-color: #9bc8f4;
+  background: #9bc8f4;
+  box-shadow: 0 0 15px rgba(155,200,244,.3);
 }
 
 .eyebrow {
