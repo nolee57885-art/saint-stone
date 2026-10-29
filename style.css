@@ -701,3 +701,49 @@ h1 em, h2 em { color: var(--blue); font-weight: 400; }
 @media(max-width:900px){.brand-logo{width:34px;height:46px}.site-header{gap:12px}.header-cta{display:none}}
 @media(max-width:600px){.hero{min-height:650px;padding-top:35px}.hero-logo{width:112px;max-height:190px}.brand-name{font-size:12px;letter-spacing:.14em}.brand-logo{width:30px;height:40px}.footer-disclosure{font-size:13px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+
+/* Tarot library: clear editorial sections and breathing room for the illustrated deck */
+.tarot-library .section-heading > p:last-child { max-width: 620px; margin-inline: auto; }
+.tarot-group-heading {
+  grid-column: 1 / -1;
+  margin: 28px 0 2px;
+  padding: 20px 0 12px;
+  border-bottom: 1px solid rgba(197,158,165,.35);
+  text-align: left;
+}
+.tarot-group-heading:first-child { margin-top: 0; }
+.tarot-group-heading h3 {
+  margin: 0;
+  color: #f0c6d0;
+  font: 500 clamp(19px,2.2vw,27px) var(--serif);
+  letter-spacing: .035em;
+}
+.tarot-group-heading p {
+  margin: 7px 0 0;
+  color: #aebdd0;
+  font-size: 16px;
+  line-height: 1.45;
+}
+.tarot-card-art {
+  padding: 0;
+  aspect-ratio: 360 / 520;
+  border: 0;
+  background: #0b1728;
+}
+.tarot-card-art:before { inset: 5px; z-index: 2; }
+.tarot-card .tarot-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+.tarot-card-suit { display: block; min-height: 2.5em; line-height: 1.35; padding: 5px 2px 1px; }
+.tarot-card { padding: 7px; }
+.tarot-card:hover .tarot-card-art { filter: brightness(1.12); }
+.tarot-card:focus-visible { outline: 2px solid #f0c6d0; outline-offset: 3px; }
+@media(max-width:560px) {
+  .tarot-group-heading { margin-top: 20px; padding-top: 16px; }
+  .tarot-group-heading p { font-size: 14px; }
+  .tarot-card { padding: 4px; }
+}
