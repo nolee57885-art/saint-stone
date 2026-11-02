@@ -382,10 +382,17 @@ h1 em, h2 em { color: var(--blue); font-weight: 400; }
 .section { padding: 100px clamp(20px,7vw,100px); }
 
 .oracle-section {
-  background: linear-gradient(180deg,#081629,#091a30 80%,#071426);
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(180deg,rgba(5,9,27,.46),rgba(8,8,29,.68)),
+    url("assets/ChatGPT%20Image%20Nov%202,%202026,%2011_47_36%20AM.jpg") center / cover no-repeat;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
+.oracle-section .section-heading h2,
+.oracle-section .section-heading > p:not(.eyebrow) { text-shadow: 0 2px 18px rgba(0,0,0,.8); }
+.hero-logo { width: clamp(180px,24vw,270px); max-height: 360px; }
 
 .section-heading { max-width: 650px; margin: 0 auto 48px; text-align: center; }
 .section-heading .eyebrow { margin-bottom: 15px; }
@@ -488,7 +495,7 @@ h1 em, h2 em { color: var(--blue); font-weight: 400; }
   background-color: #24183a;
   background-image:
     linear-gradient(180deg,rgba(35,23,57,.84),rgba(35,23,57,.94)),
-    url("ChatGPT%20Image%20Nov%202,%202026,%2011_47_18%20AM.jpg");
+    url("assets/ChatGPT%20Image%20Nov%202,%202026,%2011_47_18%20AM.jpg");
   background-position: center top;
   background-size: cover;
   background-attachment: scroll;
@@ -806,3 +813,6 @@ h1 em, h2 em { color: var(--blue); font-weight: 400; }
 }
 .oracle-section .section-heading h2,
 .oracle-section .section-heading > p:not(.eyebrow) { text-shadow: 0 2px 18px rgba(0,0,0,.8); }
+
+/* Supplied Saint Stone artwork sizing and section image refinements */
+.hero-logo { width: clamp(180px,24vw,270px); max-height: 360px; }
