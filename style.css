@@ -122,16 +122,11 @@ button { font: inherit; }
 .menu-toggle { display: none; color: var(--ice); border: 0; background: none; font-size: 24px; }
 
 .hero {
-  position: relative;
-  min-height: 760px;
-  padding: 42px 20px 34px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-  background: radial-gradient(ellipse at 50% 46%,rgba(22,55,91,.6),transparent 57%),linear-gradient(180deg,rgba(7,20,38,.2),rgba(5,13,26,.96));
+  position: relative; min-height: 760px; padding: 42px 20px 34px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; overflow: hidden;
+  background: linear-gradient(180deg,rgba(7,10,25,.25),rgba(5,9,24,.72)),
+    url("assets/ChatGPT%20Image%20Nov%202,%202026,%2011_47_26%20AM.jpg") center 48% / cover no-repeat;
 }
 
 .hero:before, .hero:after {
@@ -493,7 +488,7 @@ h1 em, h2 em { color: var(--blue); font-weight: 400; }
   background-color: #24183a;
   background-image:
     linear-gradient(180deg,rgba(35,23,57,.84),rgba(35,23,57,.94)),
-    url("assets/crystal-grimoire-backroom.jpg");
+    url("ChatGPT%20Image%20Nov%202,%202026,%2011_47_18%20AM.jpg");
   background-position: center top;
   background-size: cover;
   background-attachment: scroll;
@@ -802,3 +797,12 @@ h1 em, h2 em { color: var(--blue); font-weight: 400; }
   .tarot-group-heading p { font-size: 14px; }
   .tarot-card { padding: 4px; }
 }
+
+
+.oracle-section {
+  position: relative; isolation: isolate;
+  background: linear-gradient(180deg,rgba(5,9,27,.48),rgba(8,8,29,.72)),
+    url("assets/ChatGPT%20Image%20Nov%202,%202026,%2011_47_36%20AM.jpg") center / cover no-repeat;
+}
+.oracle-section .section-heading h2,
+.oracle-section .section-heading > p:not(.eyebrow) { text-shadow: 0 2px 18px rgba(0,0,0,.8); }
