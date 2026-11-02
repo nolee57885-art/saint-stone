@@ -490,7 +490,33 @@ h1 em, h2 em { color: var(--blue); font-weight: 400; }
 .gentle-note { max-width: 760px; margin: 35px auto 0; text-align: center; color: #7188a2; font-size: 15px; font-style: italic; }
 
 .grimoire-section {
-  background: radial-gradient(ellipse at 50% 0%,rgba(29,59,91,.34),transparent 60%);
+  background-color: #24183a;
+  background-image:
+    linear-gradient(180deg,rgba(35,23,57,.84),rgba(35,23,57,.94)),
+    url("assets/crystal-grimoire-backroom.jpg");
+  background-position: center top;
+  background-size: cover;
+  background-attachment: scroll;
+  color: #f4eafa;
+}
+.grimoire-section .section-heading h2 { color: #f5e8ff; }
+.grimoire-section .section-heading > p:not(.eyebrow) { color: #d8c8eb; }
+.grimoire-section .eyebrow,
+.grimoire-section .stone-meta { color: #d8b8ff; }
+.grimoire-section .crystal-card {
+  border-color: rgba(214,184,255,.35);
+  background: linear-gradient(180deg,rgba(42,29,65,.94),rgba(24,17,41,.97));
+}
+.grimoire-section .crystal-illustration {
+  border-bottom-color: rgba(214,184,255,.3);
+  background: radial-gradient(ellipse at 50% 65%,rgba(190,153,255,.22),transparent 65%);
+}
+.grimoire-section .filter-chip { color: #e0d2f2; border-color: rgba(214,184,255,.42); }
+.grimoire-section .filter-chip.active,
+.grimoire-section .filter-chip:hover {
+  color: #fff5ff;
+  border-color: #d8b8ff;
+  background: rgba(190,153,255,.16);
 }
 
 .crystal-filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: -12px 0 34px; }
