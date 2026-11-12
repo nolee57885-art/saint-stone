@@ -816,3 +816,29 @@ h1 em, h2 em { color: var(--blue); font-weight: 400; }
 
 /* Supplied Saint Stone artwork sizing and section image refinements */
 .hero-logo { width: clamp(180px,24vw,270px); max-height: 360px; }
+
+/* Private consultation: primary commercial destination */
+.consult-section { padding: clamp(70px,9vw,118px) 22px; text-align:center; background: radial-gradient(ellipse at 50% 0%,rgba(113,47,77,.22),transparent 60%),linear-gradient(180deg,#09182b,#071426); border-top:1px solid var(--line); }
+.consult-section h2 { max-width:900px; margin:0 auto 18px; font-size:clamp(34px,5vw,58px); }
+.consult-intro { max-width:760px!important; margin:0 auto 28px!important; color:#c1cfdd!important; font-size:19px!important; line-height:1.75!important; }
+.consult-values { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin:28px auto 42px; }
+.consult-values span { border:1px solid rgba(173,218,245,.24); color:#c6d9e9; padding:9px 14px; font-size:13px; letter-spacing:.04em; }
+.consult-packages { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; max-width:1080px; margin:0 auto 55px; text-align:left; align-items:stretch; }
+.consult-package { padding:30px 25px; border:1px solid rgba(173,218,245,.25); background:linear-gradient(155deg,rgba(22,42,65,.94),rgba(8,20,37,.97)); display:flex; flex-direction:column; min-height:370px; }
+.consult-package.featured { border-color:#c05a72; box-shadow:0 10px 42px rgba(124,19,48,.17); transform:translateY(-8px); }
+.package-kicker { color:#d7a7b4!important; font:10px var(--serif)!important; letter-spacing:.16em; text-transform:uppercase; margin:0 0 14px!important; }
+.consult-package h3 { color:#e7f2fc; font:500 22px var(--serif); margin:0 0 8px; }
+.package-price { color:#f0b4c1!important; font:500 42px var(--serif)!important; margin:0!important; }
+.package-duration { color:#9db6ce!important; font-size:13px!important; margin:0 0 18px!important; }
+.consult-package>p:not(.package-kicker):not(.package-price):not(.package-duration) { color:#bdccdc!important; font-size:16px!important; line-height:1.65!important; margin:0 0 25px!important; }
+.consult-package .button { margin-top:auto; width:100%; text-align:center; }
+.button-outline { color:#e3effb; border-color:rgba(173,218,245,.45); background:rgba(173,218,245,.06); }
+.button-outline:hover { background:rgba(173,218,245,.13); }
+.consult-details { max-width:980px; margin:0 auto 55px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:26px; text-align:left; }
+.consult-details h3 { color:#e5eff9; font:500 18px var(--serif); margin:0 0 10px; }
+.consult-details p { color:#aebfd0; font-size:15px; line-height:1.75; margin:0; }
+.consult-final { max-width:760px; margin:0 auto; padding:34px 24px; border:1px solid rgba(192,90,114,.35); background:rgba(12,27,46,.62); }
+.consult-final h3 { color:#edf5fc; font:500 clamp(24px,3vw,34px) var(--serif); margin:8px 0 24px; }
+.consult-small { max-width:780px!important; margin:20px auto 0!important; color:#91a6ba!important; font-size:13px!important; line-height:1.7!important; }
+.consult-small a { color:#d9b1c0; text-decoration:underline; }
+@media(max-width:800px) { .consult-packages { grid-template-columns:1fr; max-width:480px; } .consult-package.featured { transform:none; } .consult-details { grid-template-columns:1fr; max-width:540px; } }
